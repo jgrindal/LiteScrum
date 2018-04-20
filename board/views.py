@@ -1,10 +1,8 @@
 from django.contrib.auth import get_user_model
-
 from rest_framework import viewsets, authentication, permissions
 
 from .models import Sprint, Task
 from .serializers import SprintSerializer, TaskSerializer, UserSerializer
-
 
 User = get_user_model()
 
@@ -17,7 +15,7 @@ class DefaultsMixin(object):
         authentication.TokenAuthentication,
     )
     permission_classes = (
-        permissions.IsAuthenticated
+        permissions.IsAuthenticated,
     )
     paginate_by = 25
     paginate_by_param = 'page_size'
