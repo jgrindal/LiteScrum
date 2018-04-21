@@ -8,6 +8,7 @@ User = get_user_model()
 
 
 class SprintSerializer(serializers.ModelSerializer):
+    """Serializer for Sprint Model"""
     links = serializers.SerializerMethodField()
 
     class Meta:
@@ -22,6 +23,7 @@ class SprintSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
+    """Serializer for Task Model"""
     status_display = serializers.SerializerMethodField()
     links = serializers.SerializerMethodField()
 
@@ -56,6 +58,7 @@ class TaskSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """Serializer for User Model"""
     full_name = serializers.CharField(source='get_full_name', read_only=True)
     links = serializers.SerializerMethodField()
 
